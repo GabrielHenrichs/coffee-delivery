@@ -76,11 +76,11 @@ export const CardFooter = styled.footer`
     }
   }
 
-  > div {
+  > form {
     display: flex;
     gap: 0.5rem;
 
-    > input {
+    input {
       height: 2.375rem;
       width: 4.5rem;
       border-radius: 6px;
@@ -91,7 +91,7 @@ export const CardFooter = styled.footer`
       text-align: center;
     }
 
-    > button {
+    button {
       background: ${(props) => props.theme['purple-dark']};
       color: ${(props) => props.theme.white};
       border: 0;

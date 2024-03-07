@@ -65,7 +65,7 @@ const ITEM_COLORS = {
 } as const
 
 interface ItemProps {
-  itemColor: keyof typeof ITEM_COLORS
+  $itemColor: keyof typeof ITEM_COLORS
 }
 
 export const Item = styled.div<ItemProps>`
@@ -77,8 +77,9 @@ export const Item = styled.div<ItemProps>`
     height: 2rem;
     width: 2rem;
     border-radius: 999px;
-    color: ${(props) => props.theme.white};
-    background-color: ${(props) => props.theme[ITEM_COLORS[props.itemColor]]};
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ $itemColor, theme }) =>
+      theme[ITEM_COLORS[$itemColor]]};
 
     display: flex;
     align-items: center;

@@ -1,8 +1,12 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import SuccessImage from '../../assets/success-image.svg'
 import { Info, InfoIcon, SuccessContainer } from './styles'
+import { useContext } from 'react'
+import { OrderContext } from '../../contexts/OrderContext'
 
 export function Success() {
+  const { order } = useContext(OrderContext)
+
   return (
     <SuccessContainer>
       <h1>Uhu! Pedido confirmado</h1>
@@ -16,9 +20,15 @@ export function Success() {
             </InfoIcon>
             <div>
               <span>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em{' '}
+                <strong>
+                  {order?.rua}, {order?.numero}
+                  {!!order?.complemento && '/' + order?.complemento}
+                </strong>
               </span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>
+                {order?.bairro} - {order?.cidade}, {order?.uf}
+              </span>
             </div>
           </div>
           <div>
@@ -36,7 +46,13 @@ export function Success() {
             </InfoIcon>
             <div>
               <span>Pagamento na entrega</span>
-              <strong>Cartão de Crédito</strong>
+              <strong>
+                {order?.paymentMethod === 'creditCard'
+                  ? 'Cartão de Crédito'
+                  : order?.paymentMethod === 'debitCard'
+                    ? 'Cartão de Débito'
+                    : 'Dinheiro'}
+              </strong>
             </div>
           </div>
         </Info>

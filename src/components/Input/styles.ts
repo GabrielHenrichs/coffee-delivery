@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { InputProps } from '.'
 
 export const InputContainer = styled.div`
   position: relative;
@@ -13,12 +14,12 @@ export const InputContainer = styled.div`
   }
 `
 
-export const CustomInput = styled.input`
+export const CustomInput = styled.input<InputProps>`
   width: 100%;
   height: 2.5rem;
   border-radius: 4px;
   padding: 0.75rem;
-  padding-right: ${(props) => !props.required && 'calc(0.75rem + 52px)'};
+  padding-right: ${(props) => props.optional && 'calc(0.75rem + 52px)'};
   border: 1px solid ${(props) => props.theme['base-button']};
   background: ${(props) => props.theme['base-input']};
   color: ${(props) => props.theme['base-text']};

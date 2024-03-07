@@ -13,13 +13,13 @@ export function Intro() {
         </h2>
         <Items>
           <div>
-            <Item itemColor="yellowDark">
+            <Item $itemColor="yellowDark">
               <div>
                 <ShoppingCart size={16} weight="fill" />
               </div>
               <span>Compra simples e segura</span>
             </Item>
-            <Item itemColor="yellow">
+            <Item $itemColor="yellow">
               <div>
                 <Timer size={16} weight="fill" />
               </div>
@@ -27,13 +27,13 @@ export function Intro() {
             </Item>
           </div>
           <div>
-            <Item itemColor="baseText">
+            <Item $itemColor="baseText">
               <div>
                 <Package size={16} weight="fill" />
               </div>
               <span>Embalagem mantém o café intacto</span>
             </Item>
-            <Item itemColor="purple">
+            <Item $itemColor="purple">
               <div>
                 <Coffee size={16} weight="fill" />
               </div>

@@ -2,9 +2,11 @@ import { MapPin, ShoppingCart } from 'phosphor-react'
 import coffeeDeliveryLogo from '../../assets/coffee-delivery-logo.svg'
 import { Actions, Cart, CartCounter, HeaderContainer, Location } from './styles'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { OrderContext } from '../../contexts/OrderContext'
 
 export function Header() {
+  const { orderItems } = useContext(OrderContext)
   const [city, setCity] = useState('')
 
   useEffect(() => {
@@ -37,7 +39,9 @@ export function Header() {
         </Location>
         <Cart to="/checkout">
           <ShoppingCart size={22} weight="fill" />
-          <CartCounter>3</CartCounter>
+          {orderItems.length !== 0 && (
+            <CartCounter>{orderItems.length}</CartCounter>
+          )}
         </Cart>
       </Actions>
     </HeaderContainer>

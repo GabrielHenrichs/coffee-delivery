@@ -96,12 +96,18 @@ export const OrderSummary = styled(BaseCard)`
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.6;
+    cursor: pointer;
 
     transition: background-color 0.1s;
   }
 
-  button[type='submit']:hover {
+  button[type='submit']:not(:disabled):hover {
     background: ${(props) => props.theme['yellow-dark']};
+  }
+
+  button[type='submit']:disabled {
+    background: ${(props) => props.theme['yellow-dark']};
+    cursor: not-allowed;
   }
 `
 

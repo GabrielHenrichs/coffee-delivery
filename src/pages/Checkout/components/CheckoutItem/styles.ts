@@ -60,6 +60,7 @@ export const ItemFooter = styled.footer`
     border: 0;
     padding: 0.5rem;
     gap: 0.25rem;
+    cursor: pointer;
 
     transition: background-color 0.1s;
 

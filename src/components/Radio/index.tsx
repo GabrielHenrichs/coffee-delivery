@@ -1,15 +1,18 @@
 import { Bank, CreditCard, Money } from 'phosphor-react'
 import { RadioContainer } from './styles'
+import { useFormContext } from 'react-hook-form'
 
 export function Radio() {
+  const { register } = useFormContext()
+
   return (
     <RadioContainer>
       <div>
         <input
-          type="radio"
           id="creditCard"
-          name="payment-method"
+          type="radio"
           value="creditCard"
+          {...register('paymentMethod')}
         />
         <label htmlFor="creditCard">
           <CreditCard size={16} />
@@ -19,10 +22,10 @@ export function Radio() {
 
       <div>
         <input
-          type="radio"
           id="debitCard"
-          name="payment-method"
+          type="radio"
           value="debitCard"
+          {...register('paymentMethod')}
         />
         <label htmlFor="debitCard">
           <Bank size={16} />
@@ -31,7 +34,12 @@ export function Radio() {
       </div>
 
       <div>
-        <input type="radio" id="money" name="payment-method" value="money" />
+        <input
+          id="money"
+          type="radio"
+          value="money"
+          {...register('paymentMethod')}
+        />
         <label htmlFor="money">
           <Money size={16} />
           Dinheiro
