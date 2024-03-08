@@ -26,6 +26,10 @@ export const SuccessContainer = styled.div`
     justify-content: space-between;
     gap: 6.375rem;
     margin-top: 2.5rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 `
 
@@ -40,18 +44,6 @@ export const Info = styled.div`
   border-top-right-radius: 36px;
   border-bottom-left-radius: 36px;
   border: 2px solid ${(props) => props.theme.yellow};
-
-  /* background: linear-gradient(
-      135deg,
-      ${(props) => props.theme.yellow},
-      ${(props) => props.theme.purple}
-    )
-    border-box;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude; */
 
   > div {
     display: flex;

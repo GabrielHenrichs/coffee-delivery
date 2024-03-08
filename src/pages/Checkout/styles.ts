@@ -14,6 +14,11 @@ export const CheckoutContainer = styled.form`
     font-size: 1.125rem;
     padding-bottom: 1rem;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const OrderData = styled.div``

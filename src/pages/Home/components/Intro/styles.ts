@@ -27,7 +27,7 @@ export const IntroContainer = styled.div`
     color: ${(props) => props.theme['base-subtitle']};
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
@@ -50,7 +50,7 @@ export const Items = styled.div`
     gap: 1.25rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.25rem;
     padding: 1rem 0;

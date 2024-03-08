@@ -10,4 +10,10 @@ export const HomeContainer = styled.main`
 export const CardList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
